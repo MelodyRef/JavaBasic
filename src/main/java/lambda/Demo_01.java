@@ -1,4 +1,4 @@
-package lamda;
+package lambda;
 
 public class Demo_01 {
     public static void main(String[] args) {

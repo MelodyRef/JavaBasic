@@ -1,6 +1,6 @@
-package lamda;
+package lambda;
 
-import lamda.inteface.FirstFunctionInteface;
+import lambda.inteface.FirstFunctionInteface;
 
 public class FirstInterfaceImpl {
 

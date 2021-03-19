@@ -1,4 +1,4 @@
-package lamda.inteface;
+package lambda.inteface;
 
 @FunctionalInterface
 public interface FirstFunctionInteface {
