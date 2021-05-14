@@ -5,13 +5,13 @@ public class BaiduMissingNumberInArray {
         if (array.length == 0)
             return 0;
         int length = array.length;
-//        int tru[] = new int[length + 1];
-//        for (int i = 0; i < tru.length; i++) {
-//            tru[i] = i;
-//        }
-        int min = 0, max = length, midt = (int) Math.ceil((double) ((min + max) / 2));
+        //数组最大值和最小值差
+        int div = array[length - 1] - array[0];
+        //差比数组长度小说明是尾或者头缺失
+        if (div < length)
+            return array[0] == 0 ? length : 0;
         int from = 0, tail = length - 1, mid = (from + tail) / 2;
-        //比较当前mid中数值和完整数组中数值大小，如过小于等于则后面缺失，大与等于则后面前面缺失
+        //比较当前mid中数值和完整数组中数值大小，如过小于等于则后面缺失，大与则后面前面缺失
         while (from != tail) {
             if (array[mid] <= mid) {
                 from = mid + 1;
@@ -21,13 +21,13 @@ public class BaiduMissingNumberInArray {
                 mid = (from + tail) / 2;
             }
         }
-        if (array[from] != from)
-            return from;
-        else return from == 0 ? 0 : length;
+        if (array[from] != mid)
+            return mid;
+        return mid + 1;
     }
 
     public static void main(String[] args) {
-        int a[] = {0,1, 2, 3, 4, 6, 7};
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8};
         System.out.println(solve(a));
     }
 }

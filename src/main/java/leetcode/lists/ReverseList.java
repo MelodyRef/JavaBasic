@@ -1,7 +1,5 @@
 package leetcode.lists;
 
-import java.util.List;
-
 class ListNode {
     int val;
     ListNode next;
@@ -57,6 +55,12 @@ public class ReverseList {
         ReverseList reverseList = new ReverseList();
         ListNode ans = reverseList.reverseBetween(head, 2, 4);
         System.out.println(ans.val);
+    }
+
+    public ListNode reverseKGruop(ListNode head,int k){
+        if(head==null);
+        int ne[] = new int[11];
+        return  null;
     }
 
     public ListNode ReverseNodeIter(ListNode head, int left, int right) {
