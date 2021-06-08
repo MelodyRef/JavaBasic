@@ -27,7 +27,7 @@ public class PollutedTree {
     }
 
     boolean find(int target){
-
+        return false;
     }
 
 }

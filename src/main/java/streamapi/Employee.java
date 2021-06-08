@@ -1,5 +1,8 @@
 package streamapi;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class Employee {
     private int id;
     private String name;
@@ -78,6 +81,7 @@ public class Employee {
         long temp;
         temp = Double.doubleToLongBits(salary);
         result = prime * result + (int) (temp ^ (temp >>> 32));
+
         return result;
     }
 
