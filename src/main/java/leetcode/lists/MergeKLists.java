@@ -16,16 +16,16 @@ public class MergeKLists {
         ListNode p = dummy;
 
         PriorityQueue<ListNode> pq = new PriorityQueue<>(lists.length, (a, b) -> (a.val - b.val));
-        for(ListNode head:lists){
-            if(head!=null){
+        for (ListNode head : lists) {
+            if (head != null) {
                 pq.add(head);
             }
         }
 
-        while (!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             ListNode node = pq.poll();
             p.next = node;
-            if(node.next!=null){
+            if (node.next != null) {
                 pq.add(node.next);
 
             }
