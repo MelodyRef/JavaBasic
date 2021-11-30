@@ -12,20 +12,23 @@ public class PathSum {
 
     public int pathSum(TreeNode root, int targetSum) {
         target = targetSum;
-        pathSumOfAll(root, targetSum, targetSum);
+        pathSumOfAll(root, targetSum);
         return count;
     }
 
-    public void pathSumOfAll(TreeNode root, int targetSum, int val) {
+    //对于树中每一个节点，考虑情况有1.以该节点为路径起点    2.该节点不是起点
+    //targetSum为要找的路径，val为父节点值
+    public void pathSumOfAll(TreeNode root, int targetSum) {
         if (root == null)
             return;
         if (root.val == targetSum)
             count++;
-        pathSumOfAll(root.left, targetSum, target);
-        pathSumOfAll(root.right, targetSum, target);
-        if ((target - val) == targetSum) {
-            pathSumOfAll(root.left, targetSum - root.val, target);
-            pathSumOfAll(root.right, targetSum - root.val, target);
+        pathSumOfAll(root.left, targetSum - root.val);
+        pathSumOfAll(root.right, targetSum - root.val);
+        if (targetSum != target) {
+            //当前节点不在路径中
+            pathSumOfAll(root.left, target);
+            pathSumOfAll(root.right, target);
         }
     }
 }

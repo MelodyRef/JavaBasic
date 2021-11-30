@@ -33,14 +33,17 @@ public class Start {
 //        Thread.sleep(1000);
 //        b.start();
         a.start();
-        a.join(1000);
+//        a.join(1000);
+        Thread.sleep(1000L);
         b.start();
         System.out.println(a.getName() + ":" + a.getState());
+        Thread.sleep(3000L);
         System.out.println(b.getName() + ":" + b.getState());
     }
 
     private synchronized void testMethod() {
         try {
+            System.out.println(Thread.currentThread().getName());
             Thread.sleep(2000L);
         } catch (InterruptedException e) {
             e.printStackTrace();

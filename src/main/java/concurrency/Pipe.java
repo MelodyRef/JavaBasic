@@ -1,8 +1,6 @@
 package concurrency;
 
-import java.io.IOException;
-import java.io.PipedReader;
-import java.io.PipedWriter;
+import java.io.*;
 
 /**
  * @author Melody
@@ -10,19 +8,20 @@ import java.io.PipedWriter;
  */
 public class Pipe {
     static class ReaderThread extends Thread {
-        private PipedReader pipedReader;
+        private PipedInputStream inputStream;
 
-        public ReaderThread(PipedReader pipedReader) {
-            this.pipedReader = pipedReader;
+        public ReaderThread(PipedInputStream inputStream) {
+            this.inputStream = inputStream;
         }
 
         @Override
         public void run() {
             System.out.println("this is reader");
             int receive = 0;
+            char ch;
             try {
-                while ((receive = pipedReader.read()) != -1) {
-                    System.out.println((char) receive);
+                while ((receive = inputStream.read()) != -1) {
+                    System.out.println((char)receive);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -31,10 +30,10 @@ public class Pipe {
     }
 
     static class WriteThread implements Runnable {
-        private PipedWriter pipedWriter;
+        private PipedOutputStream outputStream;
 
-        public WriteThread(PipedWriter pipedWriter) {
-            this.pipedWriter = pipedWriter;
+        public WriteThread(PipedOutputStream outputStream) {
+            this.outputStream = outputStream;
         }
 
         @Override
@@ -42,13 +41,13 @@ public class Pipe {
             System.out.println("this is writer");
             int receive = 0;
             try {
-                pipedWriter.write("1test2###");
+                outputStream.write("Hello Word".getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 try {
-                    pipedWriter.close();
-                }catch (IOException e){
+                    outputStream.close();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -56,12 +55,12 @@ public class Pipe {
     }
 
     public static void main(String[] args) throws IOException {
-        PipedWriter pipedWriter = new PipedWriter();
-        PipedReader pipedReader = new PipedReader();
-        pipedWriter.connect(pipedReader);
-        Thread a = new Thread(new ReaderThread(pipedReader));
+        PipedOutputStream outputStream = new PipedOutputStream();
+        PipedInputStream inputStream = new PipedInputStream();
+        outputStream.connect(inputStream);
+        Thread a = new Thread(new ReaderThread(inputStream));
         a.start();
-        new Thread(new WriteThread(pipedWriter)).start();
+        new Thread(new WriteThread(outputStream)).start();
         System.out.println(a.getState());
     }
 }

@@ -8,26 +8,20 @@ package leetcode.dp;
 public class LongestValidParentheses {
     public int longestValidParentheses(String s) {
         int n = s.length();
-        //状态,dp[i][j]代表s[i][j]之间的字符能否组成括号
         int max = 0;
-        boolean[][] dp = new boolean[s.length()][s.length()];
-
-        for (int i = n - 2; i >= 0; --i) {
-            for (int j = i + 1; j < n; ++j) {
-                //s[i]和s[j]能组成
-                if (s.charAt(j) == ')' && s.charAt(i) == '(') {
-                    if (j - i == 1) {
-                        dp[i][j] = true;
-                        max = Math.max(max, 2);
-                    } else {
-                        dp[i][j] = dp[i + 1][j - 1];
-                        max = dp[i][j] ? Math.max(max, j - i + 1) : max;
-                    }
-                } else {
-                    dp[i][j] = false;
+        int[] dp = new int[n];
+        for (int i = 1; i < n; ++i) {
+            if (s.charAt(i) == ')') {
+                if (s.charAt(i - 1) == '(') {
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
                 }
             }
+            max = Math.max(max, dp[i]);
         }
         return max;
     }
+
+
 }
