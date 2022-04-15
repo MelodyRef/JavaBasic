@@ -1,9 +1,12 @@
 package leetcode.graph;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
+ * LeetCode_
+ *
  * @author Melody
  * @date 2021/12/15 16:30
  */
@@ -32,8 +35,9 @@ public class FindOrder {
         }
 
         int[] res = new int[numCourses];
+        Collections.reverse(path);
         for (int i = 0; i < numCourses; ++i) {
-            res[i] = path.get(numCourses - 1 - i);
+            res[i] = path.get(i);
         }
         return res;
     }
@@ -71,8 +75,8 @@ public class FindOrder {
             graph[i] = new ArrayList<>();
         }
         for (int[] entry : prerequisites) {
-            int from = entry[0];
-            int to = entry[1];
+            int from = entry[1];
+            int to = entry[0];
             graph[from].add(to);
         }
         return graph;
@@ -87,7 +91,6 @@ public class FindOrder {
 
     public static void main(String[] args) {
         FindOrder find = new FindOrder();
-        System.out.println(find.findOrder(2, new int[][]{{1, 0}}));
-
+        System.out.println(find.findOrder(4, new int[][]{{1, 0}, {0, 2}, {2, 3}}));
     }
 }

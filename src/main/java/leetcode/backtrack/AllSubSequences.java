@@ -31,4 +31,9 @@ public class AllSubSequences {
             track.remove(track.size() - 1);
         }
     }
+
+    public static void main(String[] args) {
+
+        System.out.println(System.currentTimeMillis()/1000);
+    }
 }
