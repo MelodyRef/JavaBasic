@@ -17,6 +17,7 @@ public class WaitAndSleep {
                 }
             }
         });
+
         t1.start();
 
         Thread t2 = new Thread(() -> {

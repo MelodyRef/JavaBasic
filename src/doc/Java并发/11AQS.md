@@ -14,7 +14,7 @@ AQS是一个用来构建锁和同步器的框架，使用AQS能高效地构造�
 
 ### 11.2AQS的数据结构
 
-AQS内部使用一个volatile标识的变量state来作为资源的标识。同时定义了几个获取和改变state的protected方法
+AQS内部使用一个volatile标识的变量state来作为资源的标识。同时定义了几个获取和改变state的==protected==方法
 
 ```java
 getState()
