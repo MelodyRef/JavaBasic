@@ -2,32 +2,31 @@ package leetcode.backtrack;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Vector;
 
 /**
- * @author Melody
- * @date 2021/10/21 14:22
+ * @Classname SubSets
+ * @Description TODO
+ * @Version 1.0.0
+ * @Date 2021/10/13 22:41
+ * @Created by Melody
  */
 public class SubSets {
-    List<List<Integer>> res = new ArrayList<>();
+    LinkedList<LinkedList<Integer>> res = new LinkedList<>();
 
-    public List<List<Integer>> subsets(int[] nums) {
+    LinkedList<LinkedList<Integer>> subsets(int[] nums) {
         LinkedList<Integer> track = new LinkedList<>();
         backtrack(nums, 0, track);
         return res;
     }
 
     public void backtrack(int[] nums, int start, LinkedList<Integer> track) {
-        res.add(new ArrayList<>(track));
-        for (int i = start; i < nums.length; ++i) {
+        res.add(new LinkedList<>(track));
+        for (int i = start; i < nums.length; i++) {
             track.add(nums[i]);
+            //往前
             backtrack(nums, i + 1, track);
             track.removeLast();
         }
-    }
-
-    public static void main(String[] args) {
-        SubSets s = new SubSets();
-        System.out.println(s.subsets(new int[]{1,2,3,4}));
     }
 }

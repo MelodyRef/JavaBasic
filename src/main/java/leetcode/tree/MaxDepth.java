@@ -1,36 +1,19 @@
 package leetcode.tree;
 
-import jz.struct.Node;
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import jz.struct.TreeNode;
 
 /**
- * LeetCode_559
- *
- * @author Melody
- * @date 2021/11/22 14:30
+ * @Classname MaxDepth
+ * @Description 求二叉树的最大深度
+ * @Version 1.0.0
+ * @Date 2021/10/21 18:57
+ * @Created by Melody
  */
 public class MaxDepth {
-    public int maxDepth(Node root) {
-        int res = 0;
+    public int maxDepth(TreeNode root) {
         if (root == null) {
-            return res;
+            return 0;
         }
-        Deque<Node> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; ++i) {
-                Node tmp = queue.poll();
-                List<Node> children = tmp.children;
-                for (Node node : children) {
-                    queue.offer(node);
-                }
-            }
-            res++;
-        }
-        return res;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
