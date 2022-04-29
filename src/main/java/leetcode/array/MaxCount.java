@@ -15,5 +15,6 @@ public class MaxCount {
             int a = ops[i][0], b = ops[i][1];
 
         }
+        return 1;
     }
 }
