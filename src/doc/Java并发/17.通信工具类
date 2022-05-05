@@ -1,0 +1,48 @@
+| 类             | 作用                                 |
+| -------------- | ------------------------------------ |
+| Semaphore      | 线程线程的数量                       |
+| Exchanger      | 两个线程交换数据                     |
+| CountDownLatch | 线程等待直到计数器减为0时开始工作    |
+| CyclicBarrier  | 类似CountDownLatch，但是可以重复使用 |
+| Phaser         | 增强的CyclicBarrier                  |
+
+
+
+## 1.Semaphore
+
+​	使用一个int类型数据看成资源permits
+
+​	构造时需要传入初始资源总数和是否使用公平的同步器，默认使用非公平的
+
+
+
+最主要的是accquire方法和release方法，accquire方法获取一个permit,release方法释放一个permit也可以使用带参数的获取多个或者释放多个
+
+如果permits为0其他线程来accquire会阻塞直到其他线程release了permit
+
+
+
+Semaphore往往用于资源有限的场景中去线程线程的数量
+
+
+
+## 2.Exchanger
+
+当一个线程执行了Exchanger类的exchange方法后进入阻塞状态等待另一个线程执行exchange方法。使用了park/unpart来实现
+
+多个线程使用Exchanger交换数据只有前两个线程能成功，其他线程进入阻塞状态，可重复使用
+
+
+
+## 3.CountDownLatch
+
+内部使用了一个继承自AQS的实现类Sync，计数值count只能被设置一次
+
+
+
+### 4.CyclicBarrier
+
+具有CountDownLatch全部功能，可以使用reset重置屏障
+
+
+
