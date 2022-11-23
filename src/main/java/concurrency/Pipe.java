@@ -21,7 +21,7 @@ public class Pipe {
             char ch;
             try {
                 while ((receive = inputStream.read()) != -1) {
-                    System.out.println((char)receive);
+                    System.out.println((char) receive);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

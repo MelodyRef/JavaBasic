@@ -23,6 +23,7 @@ class Unrelated {
 public class Strategize {
     Strategy strategy;
     String msg;
+
     Strategize(String msg) {
         strategy = new Soft(); // [1]
         this.msg = msg;
@@ -48,7 +49,7 @@ public class Strategize {
         };
         Strategize s = new Strategize("Hello there");
         s.communicate();
-        for(Strategy newStrategy : strategies) {
+        for (Strategy newStrategy : strategies) {
             s.changeStrategy(newStrategy); // [5]
             s.communicate(); // [6]
         }

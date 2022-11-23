@@ -15,12 +15,12 @@ public class MinPQ<Key extends Comparable<Key>> {
 
     /**
      * return the minmum key of pq
+     *
      * @return
      */
-    public Key min(){
+    public Key min() {
         return pq[1];
     }
-
 
 
 }

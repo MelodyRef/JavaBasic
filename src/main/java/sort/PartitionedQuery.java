@@ -24,8 +24,8 @@ public class PartitionedQuery {
         int start = 0;
         int end = index.length;
         int mid = -1;
-        while(start<=end){
-            mid=(start+end)/2;
+        while (start <= end) {
+            mid = (start + end) / 2;
         }
         return 0;
     }

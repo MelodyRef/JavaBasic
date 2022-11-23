@@ -11,7 +11,7 @@ public class Complement {
         for (char ch : binaryStr.toCharArray()) {
             ans.append(ch == '0' ? 1 : 0);
         }
-        int res = Integer.parseInt(ans.toString(),2);
+        int res = Integer.parseInt(ans.toString(), 2);
         return res;
     }
 

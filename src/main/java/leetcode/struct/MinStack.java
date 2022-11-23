@@ -7,7 +7,6 @@ package leetcode.struct;
 public class MinStack {
 
 
-
     public MinStack() {
     }
 

@@ -7,20 +7,20 @@ import java.util.stream.IntStream;
  * @date 2021/8/9 16:43
  */
 public class PriortiyDemo2 {
-    public static class T1 extends Thread{
+    public static class T1 extends Thread {
         @Override
         public void run() {
             super.run();
             System.out.println(String.format("当前执行线程是:%s,优先级：%d"
-                    ,Thread.currentThread().getName()
-                    ,Thread.currentThread().getPriority()));
+                    , Thread.currentThread().getName()
+                    , Thread.currentThread().getPriority()));
 
 
         }
     }
 
     public static void main(String[] args) {
-        IntStream.range(1,10).forEach(i->{
+        IntStream.range(1, 10).forEach(i -> {
             Thread thread = new Thread(new T1());
             thread.setPriority(i);
             thread.start();

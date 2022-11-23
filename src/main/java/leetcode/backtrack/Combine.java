@@ -31,6 +31,6 @@ public class Combine {
 
     public static void main(String[] args) {
         Combine combine = new Combine();
-        System.out.println(combine.combine(1,1));
+        System.out.println(combine.combine(1, 1));
     }
 }

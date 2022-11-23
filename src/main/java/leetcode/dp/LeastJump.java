@@ -16,7 +16,7 @@ public class LeastJump {
         dp[n - 1] = 0;
         for (int i = n - 2; i >= 0; i--) {
             int dis = nums[i];
-            int min = Integer.MAX_VALUE-100;
+            int min = Integer.MAX_VALUE - 100;
             for (int k = 1; k <= dis; k++) {
                 if (i + k >= n - 1) {
                     min = 0;

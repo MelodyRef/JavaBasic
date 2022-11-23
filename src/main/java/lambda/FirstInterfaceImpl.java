@@ -18,6 +18,6 @@ public class FirstInterfaceImpl {
 
     public static void main(String[] args) {
         int x = 3;
-        new FirstInterfaceImpl((a,b) -> System.out.println(a+x+b-1)).sout(4,x);
+        new FirstInterfaceImpl((a, b) -> System.out.println(a + x + b - 1)).sout(4, x);
     }
 }

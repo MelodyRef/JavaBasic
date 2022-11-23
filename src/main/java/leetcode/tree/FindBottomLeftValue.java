@@ -15,7 +15,7 @@ public class FindBottomLeftValue {
     public int[] bottomLeftValue(TreeNode root, int level) {
         //叶子节点，返回父节点层数，不存在最左元素
         if (root == null) {
-            return new int[]{level-1, Integer.MAX_VALUE};
+            return new int[]{level - 1, Integer.MAX_VALUE};
         }
         int[] left = bottomLeftValue(root.left, level + 1);
         int[] right = bottomLeftValue(root.right, level + 1);

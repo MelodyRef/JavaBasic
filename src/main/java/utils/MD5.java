@@ -84,6 +84,6 @@ public class MD5 {
         jsonMap.put("JYCODE", "SBJY01");
         jsonMap.put("appKey", "cdl8fiwx3svdtt4bhv806rdsi752imz8");
         String json = JSONObject.toJSONString(jsonMap);
-        System.out.println(MD5Utils.MD5Encode(json,"gbk").toUpperCase());
+        System.out.println(MD5Utils.MD5Encode(json, "gbk").toUpperCase());
     }
 }

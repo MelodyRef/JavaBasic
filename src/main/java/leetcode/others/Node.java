@@ -17,7 +17,7 @@ public class Node {
 
     public static void main(String[] args) {
         LRUCache lruCache = new LRUCache(1);
-        lruCache.put(2,1);
+        lruCache.put(2, 1);
         lruCache.get(1);
     }
 }
@@ -40,7 +40,7 @@ class LRUCache {
     }
 
     public int get(int key) {
-        if (!cache.containsKey(key)){
+        if (!cache.containsKey(key)) {
             return -1;
         }
         makeRecently(key);

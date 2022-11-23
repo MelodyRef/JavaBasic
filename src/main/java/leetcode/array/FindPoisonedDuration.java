@@ -2,6 +2,7 @@ package leetcode.array;
 
 /**
  * LeetCode_495
+ *
  * @author Melody
  * @date 2021/11/10 10:44
  */

@@ -28,8 +28,7 @@ public class OddEvenJumps {
         even[n - 1] = n - 1;
 
 
-
-        for (int i = 0; i < n-1; ++i) {
+        for (int i = 0; i < n - 1; ++i) {
             int maxIndex = -1, minIndex = -1;
             int max = Integer.MAX_VALUE;
             int min = Integer.MIN_VALUE;

@@ -14,7 +14,7 @@ public class FindNthDigit {
         while (i < n) {
             sb.append(++i);
         }
-        return sb.charAt(n-1) -'0';
+        return sb.charAt(n - 1) - '0';
 
     }
 

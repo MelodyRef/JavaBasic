@@ -36,6 +36,6 @@ public class CombinationSum {
 
     public static void main(String[] args) {
         CombinationSum com = new CombinationSum();
-        System.out.println(com.combinationSum(new int[]{6,7, 2, 3}, 7));
+        System.out.println(com.combinationSum(new int[]{6, 7, 2, 3}, 7));
     }
 }

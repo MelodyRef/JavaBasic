@@ -57,10 +57,10 @@ public class ReverseList {
         System.out.println(ans.val);
     }
 
-    public ListNode reverseKGruop(ListNode head,int k){
-        if(head==null);
+    public ListNode reverseKGruop(ListNode head, int k) {
+        if (head == null) ;
         int ne[] = new int[11];
-        return  null;
+        return null;
     }
 
     public ListNode ReverseNodeIter(ListNode head, int left, int right) {
@@ -81,7 +81,7 @@ public class ReverseList {
         while (++cnt < right) {
             tmp = p.next.next;
             p.next.next = p;
-            p=p.next;
+            p = p.next;
 
         }
         return head;

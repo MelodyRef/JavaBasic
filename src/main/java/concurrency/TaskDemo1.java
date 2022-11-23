@@ -13,7 +13,7 @@ public class TaskDemo1 implements Callable<Integer> {
         return 2;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ExecutorService executor = Executors.newCachedThreadPool();
         FutureTask<Integer> futureTask = new FutureTask<>(new TaskDemo1());
         executor.submit(futureTask);

@@ -33,13 +33,13 @@ public class SlidingWindow {
 
             //判断左侧窗口是否需要收缩
 //            while (window needs shrink){
-                //d是将移出窗口的字符
-                char d = s[left];
-                //左移窗口
-                left++;
+            //d是将移出窗口的字符
+            char d = s[left];
+            //左移窗口
+            left++;
 
-                //进行窗口内数据的一系列更新
-                //...
+            //进行窗口内数据的一系列更新
+            //...
 
 //            }
         }

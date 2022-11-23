@@ -25,7 +25,7 @@ public class FindMedianSortedArrays {
         if (sum % 2 == 1) {
             return nums[sum / 2];
         } else {
-            return (nums[sum / 2] + nums[sum/2 -1]) / 2;
+            return (nums[sum / 2] + nums[sum / 2 - 1]) / 2;
         }
     }
 }

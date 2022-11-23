@@ -10,11 +10,10 @@ public class ReplaceSpace {
         }
         StringBuilder sb = new StringBuilder(s.length() + cnt * 2);
         String replace = "%20";
-        for(int i =0;i<s.length();i++){
-            if(s.charAt(i)==' '){
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
                 sb.append(replace);
-            }
-            else {
+            } else {
                 sb.append(s.charAt(i));
             }
         }

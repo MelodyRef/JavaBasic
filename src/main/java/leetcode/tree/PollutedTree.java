@@ -5,6 +5,7 @@ import jz.struct.TreeNode;
 public class PollutedTree {
 
     TreeNode root;
+
     public PollutedTree(TreeNode treeNode) {
         if (treeNode == null)
             return;
@@ -26,7 +27,7 @@ public class PollutedTree {
         }
     }
 
-    boolean find(int target){
+    boolean find(int target) {
         return false;
     }
 

@@ -17,7 +17,7 @@ public class NumSquares {
 
     public static void main(String[] args) {
         NumSquares n = new NumSquares();
-        System.out.println(Math.pow(35,0.5));
+        System.out.println(Math.pow(35, 0.5));
         System.out.println(n.numSquares(35));
     }
 }

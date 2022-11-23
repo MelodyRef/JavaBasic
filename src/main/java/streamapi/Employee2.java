@@ -11,6 +11,7 @@ public class Employee2 {
     public String show() {
         return "测试方法引用";
     }
+
     public Employee2() {
     }
 
@@ -37,6 +38,7 @@ public class Employee2 {
         this.salary = salary;
         this.status = status;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -118,6 +120,7 @@ public class Employee2 {
     public void setStatus(Status status) {
         this.status = status;
     }
+
     public enum Status {
         FREE, BUSY, VOCATION;
     }

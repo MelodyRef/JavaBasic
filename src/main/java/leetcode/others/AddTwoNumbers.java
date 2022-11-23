@@ -28,17 +28,17 @@ public class AddTwoNumbers {
             sum = (l1.val + add) % 10;
             add = (l1.val + add) / 10;
             p.next = new ListNode(sum);
-            p =p.next;
-            l1=l1.next;
+            p = p.next;
+            l1 = l1.next;
         }
-        while (l2!=null){
+        while (l2 != null) {
             sum = (l2.val + add) % 10;
             add = (l2.val + add) / 10;
             p.next = new ListNode(sum);
-            p =p.next;
-            l2=l2.next;
+            p = p.next;
+            l2 = l2.next;
         }
-        if(add==1){
+        if (add == 1) {
             p.next = new ListNode(add);
         }
         return dummy.next;

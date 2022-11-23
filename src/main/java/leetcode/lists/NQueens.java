@@ -13,7 +13,7 @@ public class NQueens {
     Vector<Vector<Integer>> solveNQueens(int n) {
         Vector<Integer> board = new Vector<Integer>(n);
         Stream<Integer> stream = board.stream();
-        stream.map(x->x+1).forEach(System.out::println);
+        stream.map(x -> x + 1).forEach(System.out::println);
         System.out.println(board.get(2));
         return res;
     }

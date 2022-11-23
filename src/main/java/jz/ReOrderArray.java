@@ -20,7 +20,7 @@ public class ReOrderArray {
     }
 
     public static void main(String[] args) {
-        int a[] =  {1,4,3};
+        int a[] = {1, 4, 3};
         reOrderArray(a);
         System.out.println(a[2]);
 

@@ -63,7 +63,7 @@ public class MinWindow {
 
             }
         }
-        return length == Integer.MAX_VALUE ? "" : s.substring(start, start+length);
+        return length == Integer.MAX_VALUE ? "" : s.substring(start, start + length);
     }
 
     public static void main(String[] args) {

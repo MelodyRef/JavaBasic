@@ -22,16 +22,16 @@ public class Permute {
 
     public void backtrack(int[] nums, LinkedList<Integer> track) {
         //触发结束条件
-        if(track.size()==nums.length){
+        if (track.size() == nums.length) {
             res.add(new LinkedList<>(track));
             return;
         }
 
-        for(int i=0;i<nums.length;i++){
-            if(track.contains(i))
+        for (int i = 0; i < nums.length; i++) {
+            if (track.contains(i))
                 continue;
             track.add(i);
-            backtrack(nums,track);
+            backtrack(nums, track);
             //取消选择
             track.removeLast();
         }

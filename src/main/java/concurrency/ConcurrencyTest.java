@@ -5,7 +5,7 @@ public class ConcurrencyTest {
 
     public static void main(String[] args) throws InterruptedException {
         concurrency();
-         serial();
+        serial();
 
     }
 
@@ -37,7 +37,7 @@ public class ConcurrencyTest {
             a += 5;
         }
         int b = 0;
-        for (long i = 0; i < count; i ++) {
+        for (long i = 0; i < count; i++) {
             b--;
         }
         long time = System.currentTimeMillis() - start;

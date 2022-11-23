@@ -16,7 +16,7 @@ public class Task implements Callable<Integer> {
         return 2;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         ExecutorService executor = Executors.newCachedThreadPool();
         Task task = new Task();
         Future<Integer> result = executor.submit(task);

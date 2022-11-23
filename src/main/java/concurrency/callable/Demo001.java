@@ -16,7 +16,7 @@ public class Demo001 implements Callable<Integer> {
         return 2;
     }
 
-    public static void main(String[] args)  throws Exception{
+    public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Demo001 demo001 = new Demo001();
         Future<Integer> result = executorService.submit(demo001);

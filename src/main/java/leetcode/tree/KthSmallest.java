@@ -11,6 +11,7 @@ import jz.struct.TreeNode;
  */
 public class KthSmallest {
     private int cnt;
+
     public int kthSmallest(TreeNode root, int k) {
         if (root == null) {
             return -1;

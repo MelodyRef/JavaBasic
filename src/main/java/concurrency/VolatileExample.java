@@ -12,6 +12,7 @@ public class VolatileExample {
         a = 1;//step1
         flag = true;//step2
     }
+
     public void reader() {
         if (flag) {//step3
             System.out.println(a);//step4

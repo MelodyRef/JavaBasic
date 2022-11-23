@@ -14,7 +14,7 @@ public class Join {
                 System.out.println("我是子线程，我先睡1秒");
                 Thread.sleep(1000l);
                 System.out.println("我是子线程，睡完了1秒");
-                synchronized (join){
+                synchronized (join) {
                     join.notify();
                 }
 

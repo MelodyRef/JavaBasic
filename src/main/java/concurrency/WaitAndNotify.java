@@ -24,6 +24,7 @@ public class WaitAndNotify {
             }
         }
     }
+
     static class ThreadB implements Runnable {
         @Override
         public void run() {

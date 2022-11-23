@@ -8,7 +8,7 @@ import jz.struct.TreeNode;
  */
 public class PruneTree {
     public TreeNode pruneTree(TreeNode root) {
-        if(needPrune(root)){
+        if (needPrune(root)) {
             return null;
         }
         return root;

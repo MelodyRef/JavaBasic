@@ -48,7 +48,7 @@ public class MinWindows {
                 left++;
                 //need中包含left时
                 if (need.containsKey(c)) {
-                    if (window.get(c).equals(need.get(c)) ) {
+                    if (window.get(c).equals(need.get(c))) {
                         valid--;
                     }
                     window.put(c, window.get(c) - 1);

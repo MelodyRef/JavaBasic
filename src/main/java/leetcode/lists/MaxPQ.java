@@ -31,8 +31,8 @@ public class MaxPQ
     /* 删除并返回当前队列中最大元素 */
     public Key delMax() {
         Key max = pq[1];
-        exch(1,N);
-        pq[N]=null;
+        exch(1, N);
+        pq[N] = null;
         N--;
         sink(1);
         return max;
@@ -57,8 +57,8 @@ public class MaxPQ
                 larger = right(k);
             }
             //if both the childs are less than parent,then break
-            if(less(larger,k)) break;
-            exch(k,larger);
+            if (less(larger, k)) break;
+            exch(k, larger);
             k = larger;
         }
     }
